@@ -31,7 +31,7 @@ longest_pass_player = next(iter(get_longest_pass_player(receiver_stats).items())
 
 most_complete_percentage = {
     "player": most_complete_player[0],
-    "value": f"{most_complete_player[1]:.2f}%"
+    "value": f"{most_complete_player[1]:.0f}%"
 }
 
 long_distance_pass = {
