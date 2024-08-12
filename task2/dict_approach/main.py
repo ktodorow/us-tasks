@@ -1,21 +1,15 @@
+import json
 from collections import defaultdict
 from most_complete_operation import get_most_complete_player
 from longest_pass_operation import get_longest_pass_player
 
 # data
-passes = [
-    {"result": "incomplete", "receiver": "Demaryius Thomas", "distance": 0.7},
-    {"result": "complete", "receiver": "Tim Patrick", "distance": 0.9},
-    {"result": "complete", "receiver": "Demaryius Thomas", "distance": 0.3},
-    {"result": "incomplete", "receiver": "Tim Patrick", "distance": 0.9},
-    {"result": "incomplete", "receiver": "Tim Patrick", "distance": 0.8},
-    {"result": "complete", "receiver": "Demaryius Thomas", "distance": 0.1},
-    {"result": "interception", "receiver": "Demaryius Thomas", "distance": 0.4},
-]
+with open('passes.json', 'r') as file:
+    data = json.load(file)
 
 receiver_stats = defaultdict(lambda: {"complete": 0, "total": 0, "max_distance": 0})
 
-for p in passes:
+for p in data:
     receiver = p["receiver"]
     result = p["result"]
     distance = p["distance"]

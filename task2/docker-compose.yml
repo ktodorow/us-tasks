@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  class_approach:
+    build:
+      context: ./class_approach
+    container_name: class_approach_container
+    volumes:
+      - ./class_approach:/app
+    command: python main.py
+    # ports:
+    #   - "5000:5000"
+
+  dict_approach:
+    build:
+      context: ./dict_approach
+    container_name: dict_approach_container
+    volumes:
+      - ./dict_approach:/app
+    command: python main.py
+    # ports:
+    #   - "5001:5001"
